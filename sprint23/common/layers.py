@@ -167,3 +167,4 @@ class Embedding:
         np.add.at(dW, self.idx, dout)
         
         return None
+
