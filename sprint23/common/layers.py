@@ -1,3 +1,4 @@
+# coding: utf-8
 from common.np import *  # import numpy as np
 from common.config import GPU
 from common.functions import softmax, cross_entropy_error
@@ -148,7 +149,7 @@ class Dropout:
 
 
 class Embedding:
-    def __init__(self,W):
+    def __init__(self, W):
         self.params = [W]
         self.grads = [np.zeros_like(W)]
         self.idx = None
@@ -162,9 +163,5 @@ class Embedding:
     def backward(self, dout):
         dW, = self.grads
         dW[...] = 0
-        # for i, word_id in enumerate(self.idx):
-        #     dW[word_id] += dout[i]
         np.add.at(dW, self.idx, dout)
-        
         return None
-

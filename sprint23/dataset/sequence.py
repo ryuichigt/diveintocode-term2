@@ -19,7 +19,7 @@ def _update_vocab(txt):
             id_to_char[tmp_id] = char
 
 
-def load_data(file_name, seed=1984):
+def load_data(file_name='addition.txt', seed=1984):
     file_path = os.path.dirname(os.path.abspath(__file__)) + '/' + file_name
 
     if not os.path.exists(file_path):
@@ -38,8 +38,6 @@ def load_data(file_name, seed=1984):
         q, a = questions[i], answers[i]
         _update_vocab(q)
         _update_vocab(a)
-
-    print(questions)
 
     # create numpy array
     x = numpy.zeros((len(questions), len(questions[0])), dtype=numpy.int)

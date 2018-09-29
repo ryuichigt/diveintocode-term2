@@ -96,6 +96,7 @@ class TimeRNN:
 class LSTM:
     def __init__(self, Wx, Wh, b):
         '''
+
         Parameters
         ----------
         Wx: 入力`x`用の重みパラーメタ（4つ分の重みをまとめる）
@@ -431,6 +432,7 @@ class TimeSigmoidWithLoss:
 class GRU:
     def __init__(self, Wx, Wh):
         '''
+
         Parameters
         ----------
         Wx: 入力`x`用の重みパラーメタ（3つ分の重みをまとめる）
@@ -610,6 +612,7 @@ class Simple_TimeAffine:
             self.db += layer.db
 
         return dxs
+
 
 
 
